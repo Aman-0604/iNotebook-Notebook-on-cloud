@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# First step is to type `npm react-router-dom concurrently`
+### But what is concurrently ?
+Previously we were opening two different terminals one was of client side(npm run start)  and one was of server side\(nodemon .\index.js).\
+Limitations : 1. Switching to the terminals again and again \
+              2. Ideally we were deploy our client side and server side differently but during development stage it \is ideal to work on a single terminal.  \
+Hence by writing `concurrently` we can run two terminals at once.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## According to concurrently npm documentation
+I like task automation with npm but the usual way to run multiple commands concurrently is npm run watch-js & npm run \watch-css. That's fine but it's hard to keep on track of different outputs. Also if one process fails, others still \keep running and you won't even notice the difference.\
 
-## Available Scripts
+Another option would be to just run all commands in separate terminals. I got tired of opening terminals and made \concurrently.
 
-In the project directory, you can run:
+## Features:
 
-### `npm start`
+• Cross platform (including Windows)\
+• Output is easy to follow with prefixes\
+• With --kill-others switch, all commands are killed if one dies\
+• Spawns commands with spawn-command
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Second Step is to open package.json of react-app and do the following changes
+Add the code `"both": "concurrently \"npm run start\" \"nodemon ../inotebook-backend/index.js\""` in scripts object
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Third Step is to open the terminal and write `npm run both`
+By this your client side and server side both will run concurrently in the same terminal
