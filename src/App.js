@@ -1,9 +1,10 @@
+import Navbar from "./components/Navbar";
 
 
 function App() {
   return (
     <div className='App'>
-      This is iNotebook
+      <Navbar/>
     </div>
   );
 }
