@@ -22,3 +22,62 @@ Add the code `"both": "concurrently \"npm run start\" \"nodemon ../inotebook-bac
 
 # Third Step is to open the terminal and write `npm run both`
 By this your client side and server side both will run concurrently in the same terminal
+
+# Fourth Step is to install react-router-dom
+Type `npm i react-router-dom` in the terminal
+
+---
+
+# What is Context API?
+Suppose a case where you have to pass a state as a prop from app.js to componenet_17.js.
+This can be done by prop drilling. But this is very painful when it comes to code it or when it comes to debugging.
+
+Hence, we use the context api. That is we make a seperate file which contains all the states.\
+Now if any componenet(say component_16.js) wants to access any state then it can ask from the context API and it will make that state accessible to it and also any other componenet can simoultaneously use it.\
+That is with the help of context API any component can access all the states available.
+
+Below is the reference for this.
+
+public/context_api.png
+
+## Syntax to create a context :
+
+The `context` basically will keep all the states related to the notes.
+
+```
+import { createContext } from "react";
+
+const noteContext = createContext();
+
+export default noteContext;
+```
+
+Meaning of the above code is ..I am asking react to provide me the Context API so that I can use it.
+
+### Boilerplate for the moment when you use Context API
+
+Yeh jo context hai, yeh jo NoteState hai , yeh notes ki saari states ko provide karegi
+
+```
+import React from "react";
+import NoteContext from "./noteContext";
+
+const NoteState = (props)=>{
+    const state={
+        "name": "aman",
+        "branch": "se"
+    }
+    return(
+        <NoteContext.Provider value={state}>
+            {props.children}
+        </NoteContext.Provider>
+    )
+}
+export default NoteState;
+```
+
+Meaning of the above code is ..Whatever thing you want to provide from this arrow function, provide it inside value={}.
+Whenver you wrap anything in this context(`<NoteContext.provider value={state}>`),all the children will come under that context.
+
+
+
