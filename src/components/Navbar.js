@@ -2,7 +2,7 @@ import React,{useEffect} from 'react'
 import {Link, useLocation} from "react-router-dom";
 
 export default function Navbar() {
-    let location = useLocation();
+    let location = useLocation();//useLocation is used when we want to do something when location is change for eg. from / to /about
     useEffect(() => {
       console.log(location.pathname);
     }, [location]);
