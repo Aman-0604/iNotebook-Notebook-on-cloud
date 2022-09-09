@@ -7,7 +7,6 @@ import {
   Route,
 } from "react-router-dom";
 import NoteState from "./context/notes/NoteState";
-import Alert from "./components/Alert";
 
 function App() {
   return (
@@ -15,8 +14,6 @@ function App() {
     <NoteState>
       <BrowserRouter>
           <Navbar/>
-          {/* <Alert icon="bi-trash3-fill" theme="danger" message="Your note has been deleted!"/>
-          <Alert icon="bi-plus-circle" theme="success" message="Your note has been added!"/> */}
           <Routes>
             <Route exact path="/" element={<Home/>} />
             <Route exact path="/about" element={<About/>} />
