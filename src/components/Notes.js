@@ -3,7 +3,7 @@ import noteContext from '../context/notes/noteContext';
 
 export default function Notes(props) {
     const notes_available = useContext(noteContext);
-    const {notes,setNotes}=notes_available;
+    const {notes,addNote,deleteNote,updateNote}=notes_available;
     return (
         <>
         <div className="col-md-2 my-3">
@@ -15,6 +15,10 @@ export default function Notes(props) {
             <div className="collapse" id={`collapseExample-${props.note_number-1}`}>
                 <div className="card card-body">
                     {notes[props.note_number-1].description}
+                    <div className="d-flex flex-row">
+                        <i className="bi bi-trash3 mx-1 my-1" style={{cursor : 'pointer'}}></i>
+                        <i className="bi bi-pencil-square mx-1 my-1" style={{cursor : 'pointer'}}></i>
+                    </div>
                 </div>
             </div>
         </div>
