@@ -4,6 +4,6 @@ export default function About() {
 
   
   return (
-    <div>About</div>
+    <div className='container my-3'><h1>About</h1></div>
   )
 }

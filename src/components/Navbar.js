@@ -10,7 +10,7 @@ export default function Navbar() {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "#7532F9"}}>
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">Navbar</Link>
+                    <Link className="navbar-brand" to="/"><img src="../logo.png" alt="iNotebook" width="30" height="24" className="d-inline-block align-text-top"/>iNotebook</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -19,7 +19,7 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link className={`nav-link ${location.pathname==="/"?"active":""}`} aria-current="page" to="/">Home</Link>
                             </li>
-                            <li className="nav-item">
+                            <li classame="nav-item">
                                 <Link className={`nav-link ${location.pathname==="/about"?"active":""}`} to="/about">About</Link>
                             </li>
                         </ul>
