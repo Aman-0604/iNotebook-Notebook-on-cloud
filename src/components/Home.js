@@ -9,10 +9,10 @@ export default function Home() {
   const { notes, setNotes } = notes_available;
   let note_number = 0;
   return (
-    <div className="container my-3">
+    <div className="container my-5">
       <Addnote/>
-      <h1 className='my-3'>Your Notes</h1>
-      <div className="row my-3">
+      <h1 className='mt-5'>Your Notes</h1>
+      <div className="row">
         {notes.map((note) => {
           note_number += 1;
           return <Notes key={note_number} note_number={note_number} />

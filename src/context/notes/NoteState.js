@@ -27,15 +27,16 @@ const NoteState = (props)=>{
     // Add a note
     const addNote=(title,description,tag)=>{
           let note={
-            "_id": "6318994237d6879d6180a992",
-            "user": "6314412d94df952068ba2db4",
-            "title": "Aman added a note",
-            "description": "Aman is learning the React course.",
-            "tag": "public",
-            "date": "2022-09-07T13:14:42.941Z",
-            "__v": 0
-          }
-          setNotes(notes.push(note));// adding  an element at the end of the array 
+              "_id": "6318994237d6879d6180a992",
+              "user": "6314412d94df952068ba2db4",
+              "title": title,
+              "description": description,
+              "tag": tag,
+              "date": "2022-09-07T13:14:42.941Z",
+              "__v": 0
+            }
+          
+          setNotes(notes.concat(note)); //concat returns an array whereas push updates an array
     }
     // Delete a note
     const deleteNote=()=>{
