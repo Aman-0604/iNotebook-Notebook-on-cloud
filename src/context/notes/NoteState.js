@@ -34,18 +34,7 @@ const NoteState = (props) => {
         "Content-Type": "application/json"
       }
     });
-    const json = await response.json();
-    console.log(json);
-
-    let note = {
-      "_id": "631c25a311cf34d94e676795",
-      "user": "631c250b11cf34d94e67678f",
-      "title": title,
-      "description": description,
-      "tag": tag,
-      "date": "2022-09-10T05:50:27.143Z",
-      "__v": 0
-    };
+    const note = await response.json();
     setNotes(notes.concat(note)); //concat returns an array whereas push updates an array
   }
 
