@@ -2,8 +2,6 @@ import React, { useContext, useState } from 'react'
 import noteContext from '../context/notes/noteContext';
 import Alert from "./Alert";
 
-
-
 export default function Addnote() {
     const notes_available = useContext(noteContext);
     const {addNote} = notes_available;

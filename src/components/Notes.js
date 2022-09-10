@@ -4,9 +4,6 @@ import noteContext from '../context/notes/noteContext';
 export default function Notes(props) {
     const notes_available = useContext(noteContext);
     const {notes,deleteNote}=notes_available;
-
- 
-    
     return (
         <>
         <div className="col-md-2 my-3">
