@@ -1,10 +1,12 @@
-import React,{useContext} from 'react'
+import React,{useContext} from 'react';
 import noteContext from '../context/notes/noteContext';
 
 export default function Notes(props) {
     const notes_available = useContext(noteContext);
-    const {notes,deleteNote,updateNote}=notes_available;
+    const {notes,deleteNote}=notes_available;
 
+ 
+    
     return (
         <>
         <div className="col-md-2 my-3">

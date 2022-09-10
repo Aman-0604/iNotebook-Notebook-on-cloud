@@ -80,4 +80,4 @@ Meaning of the above code is ..Whatever thing you want to provide from this arro
 Whenver you wrap anything in this context(`<NoteContext.provider value={state}>`),all the children will come under that context.
 
 
-
+## Have installed cors in express package in `backend` not in frontend because you can't call your api's from your web browser.

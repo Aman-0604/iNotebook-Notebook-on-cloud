@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React,{useContext,useEffect} from 'react';
 import noteContext from '../context/notes/noteContext';
 import Addnote from './Addnote';
 import Notes from './Notes';
@@ -6,7 +6,10 @@ import Notes from './Notes';
 
 export default function Home() {
   const notes_available = useContext(noteContext);
-  const { notes} = notes_available;
+  const { notes,getNotes} = notes_available;
+  useEffect(() => {
+    getNotes();
+  }, [])//[]means sirf ek baar yeh function chalega
   let note_number = 0;
   return (
     <>
