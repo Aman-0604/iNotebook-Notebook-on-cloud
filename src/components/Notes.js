@@ -8,21 +8,11 @@ export default function Notes(props) {
     const modal_ui = useRef(null);
     const closeModal_ui = useRef(null);
 
-    const [note, setNote] = useState({ eid:"", etitle: "", edescription: "", etag: "" });
-
-    const openModal = (currentNote) => {
-        modal_ui.current.click();
-        setNote({ eid :currentNote._id,etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag });
-    }
-
+    const [note, setNote] = useState({ eid: "", etitle: "", edescription: "", etag: "" });
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value });//(... ka matlab) jo mera note tha usime update kardo saath saath
     }
 
-    const updatingNote = (e) => {
-        updateNote(note.eid, note.etitle, note.edescription, note.etag);
-        closeModal_ui.current.click();
-    }
     return (
         <>
             <button type="button" ref={modal_ui} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
@@ -37,7 +27,7 @@ export default function Notes(props) {
                             <form style={{ width: "90%" }}>
                                 <div className="mb-3">
                                     <label htmlFor="title" className="form-label"><strong>Title</strong></label>
-                                    <input type="text" onChange={onChange} className="form-control" id="etitle" value={note.etitle} name='etitle'/>
+                                    <input type="text" onChange={onChange} className="form-control" id="etitle" value={note.etitle} name='etitle' />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="description" className="form-label"><strong>Description</strong></label>
@@ -50,7 +40,7 @@ export default function Notes(props) {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" onClick={updatingNote}  style={{ backgroundColor: "#7532F9", color: "white" }} className="btn btn-primary">Update</button>
+                            <button type="button" onClick={() => { updateNote(note.eid, note.etitle, note.edescription, note.etag); props.showAlert("success", "Your note has been updated."); closeModal_ui.current.click(); }} style={{ backgroundColor: "#7532F9", color: "white" }} className="btn btn-primary">Update</button>
                         </div>
                     </div>
                 </div>
@@ -66,8 +56,8 @@ export default function Notes(props) {
                     <div className="card card-body">
                         {notes[props.note_number - 1].description}
                         <div className="d-flex flex-row">
-                            <i className="bi bi-trash3 mx-1 my-1" onClick={() => { deleteNote(notes[props.note_number - 1]._id) }} style={{ cursor: 'pointer' }}></i>
-                            <i className="bi bi-pencil-square mx-1 my-1" onClick={() => { openModal(notes[props.note_number - 1]) }} style={{ cursor: 'pointer' }}></i>
+                            <i className="bi bi-trash3 mx-1 my-1" onClick={() => { deleteNote(notes[props.note_number - 1]._id); props.showAlert("danger", "Your note has been deleted."); }} style={{ cursor: 'pointer' }}></i>
+                            <i className="bi bi-pencil-square mx-1 my-1" onClick={() => { modal_ui.current.click(); setNote({ eid: notes[props.note_number - 1]._id, etitle: notes[props.note_number - 1].title, edescription: notes[props.note_number - 1].description, etag: notes[props.note_number - 1].tag }); }} style={{ cursor: 'pointer' }}></i>
                         </div>
                     </div>
                 </div>
