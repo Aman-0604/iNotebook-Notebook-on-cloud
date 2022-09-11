@@ -1,3 +1,8 @@
+# Want to know how my project looks ?
+
+<img src="/public/ss_1.png" alt="">
+<img src="/public/ss_2.png" alt="">
+
 # First step is to type `npm react-router-dom concurrently`
 ### But what is concurrently ?
 Previously we were opening two different terminals one was of client side(npm run start)  and one was of server side\(nodemon .\index.js).\
@@ -38,7 +43,7 @@ That is with the help of context API any component can access all the states ava
 
 Below is the reference for this.
 
-public/context_api.png
+<img src="/public/context_api.png" alt="">
 
 ## Syntax to create a context :
 
