@@ -3,7 +3,7 @@
 <img src="/public/ss_1.png" alt="">
 <img src="/public/ss_2.png" alt="">
 
-# First step is to type `npm react-router-dom concurrently`
+# First step is to type `npm react-router-dom concurrently` or try this instead `npm install concurrently --save`
 ### But what is concurrently ?
 Previously we were opening two different terminals one was of client side(npm run start)  and one was of server side\(nodemon .\index.js).\
 Limitations : 1. Switching to the terminals again and again \
