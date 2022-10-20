@@ -1,3 +1,4 @@
+# This MERN app is live at https://inotebook-aman.netlify.app/ 🥳
 # Want to know how my project looks ?
 
 <img src="/public/ss_1.png" alt="">
