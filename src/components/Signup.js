@@ -12,7 +12,7 @@ export default function Signup(props) {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:8000/api/auth/createUser", {
+        const response = await fetch("https://i-notebook-aman.herokuapp.com/api/auth/createUser", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
